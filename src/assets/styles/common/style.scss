@@ -202,3 +202,8 @@
         overflow: hidden;
     }
 }
+@media screen and (min-width: 950px) {
+    body {
+      display: none;
+    }
+  }
