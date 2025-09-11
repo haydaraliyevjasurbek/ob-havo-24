@@ -2,6 +2,7 @@ import axios from "axios";
 import { createContext, useState } from "react";
 export const Context = createContext();
 
+// eslint-disable-next-line react/prop-types
 function ContextProvider({ children }) {
   const [weather, setweather] = useState({})
   const [loading, setloading] = useState(true)
@@ -21,3 +22,4 @@ function ContextProvider({ children }) {
 }
 
 export default ContextProvider;
+  

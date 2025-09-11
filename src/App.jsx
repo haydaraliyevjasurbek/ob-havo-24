@@ -1,18 +1,18 @@
-import React, { useContext, useEffect } from 'react'
-import Header from './components/Header'
-import ContextProvider, { Context } from './context/Context'
-import Main from './components/Main'
-import Week from './components/Week'
+  import Header from './components/Header'
+import ContextProvider from './context/Context'
 
-function App() {
-  
-  return (
-    <ContextProvider>
-      <Header/>
-      <Main/>
-      <Week/>
-    </ContextProvider>
-  )
-}
+  import Main from './components/Main'
+  import Week from './components/Week'
 
-export default App
+  function App() {
+    
+    return (
+      <ContextProvider>
+        <Header/>
+        <Main/>
+        <Week/>
+      </ContextProvider>
+    )
+  }
+
+  export default App

@@ -202,12 +202,111 @@
         overflow: hidden;
     }
 }
-@media screen and (max-width: 1000px) {
-    body {
-      display: none;
+/* === Mobil versiya === */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 15px 0;
+
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 15px;
     }
-    html::before{
-        content: ' Telefondan saytga kirish cheklangan! ';
-        color:#4793FF;        
+
+    .logo {
+      column-gap: 10px;
+
+      span {
+        font-size: 18px;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &__form {
+      width: 100%;
+      column-gap: 10px;
+
+      .header__inp {
+        flex: 1;
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      .header__img {
+        width: 28px;
+        height: 28px;
+      }
     }
   }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    &__title {
+      font-size: 56px;
+      line-height: 66px;
+    }
+
+    &__today {
+      font-size: 28px;
+    }
+
+    &__date,
+    &__city {
+      font-size: 18px;
+    }
+
+    &__img {
+      width: 80px;
+      height: 80px;
+      top: auto;
+      right: 10px;
+      bottom: 10px;
+    }
+  }
+
+  .week {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 15px;
+    column-gap: 15px;
+  }
+
+  .day {
+    max-width: calc(50% - 15px);
+    flex: 1 1 calc(50% - 15px);
+
+    &__name {
+      font-size: 14px;
+    }
+
+    &__temp-data {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header__form {
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 5px;
+
+    .header__inp {
+      width: 100%;
+    }
+
+    .header__img {
+      align-self: flex-end;
+    }
+  }
+
+  .day {
+    max-width: 100%;
+  }
+}
