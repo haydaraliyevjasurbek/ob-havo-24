@@ -16,6 +16,8 @@ export function getWeatherIcon(condition) {
             return rainImg
         case 'Drizzle':
             return smallRainImg
+        case 'Mist':
+            return cloudsImg
     }
 }
 export function getTime(timezone) {
@@ -41,7 +43,7 @@ export function getDay(dt = 1723359600, data) {
                 day: "numeric",
             })
     }
-    console.log(new Data(millisecond).toLocaleDateString("ru-RU", {
+    console.log(new data(millisecond).toLocaleDateString("ru-RU", {
         timeStyle: "short",
         weekday: "short"
     }))

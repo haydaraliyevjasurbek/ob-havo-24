@@ -8,11 +8,13 @@ function ContextProvider({ children }) {
   const [loading, setloading] = useState(true)
   async function getWeather(city = 'toshkent') {
     let { data } = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${import.meta.env.VITE_APIKEY}`)
-    // console.log(data)  
+    // console.log(data)
+    // console.log(`${city}&appid=${import.meta.env.VITE_APIKEY}`)  
     let { lat, lon, name } = data[0]
     let { data: weather } = await axios.get(`https://api.openweathermap.org/data/2.8/onecall?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_APIKEY}&units=metric&lang=ru`)
     let weatherInfo = { ...weather, name }
     setweather(weatherInfo)
+    // console.log(weatherInfo)
     setloading(false)
     // console.log(weatherInfo)  
   }
